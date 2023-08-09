@@ -1213,6 +1213,36 @@
       "description": "No-code middleware for industrial applications",
       "note": "More information about the <a href=\"https://www.opc-router.com/terms-of-use-and-eula/?utm_source=DockerHub_runtime&utm_medium=click&utm_campaign=TermsOfUseAndEula\" target=\"_blank\">EULA</a>.",
       "stackfile": "https://raw.githubusercontent.com/portainer/templates/master/edge/opc-router/docker-compose.yml"
+    },
+    {
+      "type": 3,
+      "title": "SuiteCRM",
+      "description": "SuiteCRM self-hosting from portainer",
+      "categories": ["CMS"],
+      "platform": "linux",
+      "repository": {
+        "url": "https://github.com/suraj-bitmosys/portainer-templates",
+        "stackfile": "suitecrm/portainer-app-template/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain Name",
+          "description": "Domain name with A record pointed to this server's ipv4 address"
+        },
+        {
+          "name": "HTTP_PORT",
+          "label": "HTTP port",
+          "description": "Host port to expose HTTP port of SuiteCRM",
+          "default": "10080"
+        },
+        {
+          "name": "HTTPS_PORT",
+          "label": "HTTPS port",
+          "description": "Host port to expose HTTPS port of SuiteCRM",
+          "default": "10443"
+        }
+      ]
     }
   ]
 }

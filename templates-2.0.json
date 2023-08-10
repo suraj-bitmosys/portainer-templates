@@ -1220,8 +1220,9 @@
       "description": "SuiteCRM self-hosting from portainer",
       "categories": ["CMS"],
       "platform": "linux",
+      "name": "suitecrm",
       "repository": {
-        "url": "https://github.com/suraj-bitmosys/portainer-templates",
+        "url": "https://github.com/suraj-bitmosys/self-hosting",
         "stackfile": "suitecrm/portainer-app-template/docker-compose.yml"
       },
       "env": [

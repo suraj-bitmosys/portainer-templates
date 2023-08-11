@@ -1228,20 +1228,8 @@
       "env": [
         {
           "name": "DOMAIN",
-          "label": "Domain Name",
-          "description": "Domain name with A record pointed to this server's ipv4 address"
-        },
-        {
-          "name": "HTTP_PORT",
-          "label": "HTTP port",
-          "description": "Host port to expose HTTP port of SuiteCRM",
-          "default": "10080"
-        },
-        {
-          "name": "HTTPS_PORT",
-          "label": "HTTPS port",
-          "description": "Host port to expose HTTPS port of SuiteCRM",
-          "default": "10443"
+          "label": "Domain Name (Required)",
+          "description": "Make sure the domain name's A record is already pointed to this server's ipv4 address for automatic ssl certificates generation with let's encrypt"
         }
       ]
     }

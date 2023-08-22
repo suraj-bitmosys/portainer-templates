@@ -27,6 +27,7 @@
       "description": "Mautic self-hosting from portainer",
       "categories": ["marketing"],
       "platform": "linux",
+      "logo": "https://www.mautic.org/themes/custom/mauticorg_base/logo.svg",
       "name": "mautic",
       "repository": {
         "url": "https://github.com/suraj-bitmosys/self-hosting",

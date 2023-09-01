@@ -42,6 +42,26 @@
       ]
     },
     {
+      "type": 3,
+      "title": "Custom Docker Registry",
+      "description": "Docker Registry self-hosting from portainer",
+      "categories": ["docker"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/registry.png",
+      "name": "docker-registry",
+      "repository": {
+        "url": "https://github.com/suraj-bitmosys/self-hosting",
+        "stackfile": "docker-registry/portainer-app-template/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain Name (Required)",
+          "description": "Make sure the domain name's A record is already pointed to this server's ipv4 address for automatic ssl certificates generation with let's encrypt"
+        }
+      ]
+    },
+    {
       "type": 1,
       "title": "Registry",
       "description": "Docker image registry",

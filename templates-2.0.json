@@ -82,6 +82,283 @@
       ]
     },
     {
+      "type": 3,
+      "title": "TDS Backend",
+      "description": "TDS Backend self-hosting from portainer",
+      "categories": ["staffing-agency"],
+      "platform": "linux",
+      "name": "tds-backend",
+      "repository": {
+        "url": "https://github.com/suraj-bitmosys/self-hosting",
+        "stackfile": "tds-backend/portainer-app-template/docker-compose.yml"
+      },
+      "env": [
+        {
+          "name": "DOMAIN",
+          "label": "Domain Name (Required)",
+          "description": "Make sure the domain name's A record is already pointed to this server's ipv4 address for automatic ssl certificates generation with let's encrypt"
+        },
+        {
+          "name": "DATABASE_TYPE",
+          "label": "Database type",
+          "default": "mongo",
+          "preset": true
+        },
+        {
+          "name": "DATABASE_NAME",
+          "label": "Database name",
+          "default": "tds-db",
+          "preset": true
+        },
+        {
+          "name": "MONGODB_CLIENT_URL",
+          "label": "Mongodb client URL",
+          "default": "mongodb://mongo-one-db:27017/tds-db?replicaSet=dbrs&directConnection=true",
+          "preset": true
+        },
+        {
+          "name": "SALT_ROUNDS",
+          "label": "Hash Salt Rounds",
+          "default": "11",
+          "preset": true
+        },
+        {
+          "name": "JWT_SECRET",
+          "label": "JWT Secret(Strongly recommended to change)",
+          "default": "secret"
+        },
+        {
+          "name": "JWT_EXPIRES_IN",
+          "label": "JWT Access Token expire duration(Please do not change unless you know exactly what you're doing)",
+          "default": "5m"
+        },
+        {
+          "name": "JWT_REFRESH_EXPIRES_IN",
+          "label": "JWT Refresh Token expire duration(Please do not change unless you know exactly what you're doing)",
+          "default": "30d"
+        },
+        {
+          "name": "COOKIE_SECRET",
+          "label": "Cookie Secret(Strongly recommended to change)",
+          "default": "secret"
+        },
+        {
+          "name": "COOKIE_MAX_AGE",
+          "label": "Access Token Cookie expire duration(Please do not change unless you know exactly what you're doing)",
+          "default": "300"
+        },
+        {
+          "name": "COOKIE_REFRESH_MAX_AGE",
+          "label": "Refresh Token Cookie expire duration(Please do not change unless you know exactly what you're doing)",
+          "default": "2592000"
+        },
+        {
+          "name": "FASTIFY_SECURE_SESSION_SECRET",
+          "label": "Fastify secure session secret(Strongly recommended to change)",
+          "default": "secretOf32BytesMinimumCharacters"
+        },
+        {
+          "name": "FASTIFY_SECURE_SESSION_SALT",
+          "label": "Fastify secure session salt(Strongly recommended to change)",
+          "default": "saltOf16BytesMin"
+        },
+        {
+          "name": "LOG_LEVEL",
+          "label": "Log Level(Please do not change unless you know exactly what you're doing)",
+          "default": "error"
+        },
+        {
+          "name": "CONFIGURE_SWAGGER_DOC",
+          "label": "Should configure swagger doc?",
+          "default": "false"
+        },
+        {
+          "name": "FILE_STORAGE_PROVIDER",
+          "label": "File storage provider",
+          "default": "filesystem",
+          "preset": true
+        },
+        {
+          "name": "FILE_STORAGE_PATH_SEPERATOR",
+          "label": "File storage path seperator",
+          "default": "/",
+          "preset": true
+        },
+        {
+          "name": "FILE_SYSTEM_ROOT",
+          "label": "File system root",
+          "default": "uploads",
+          "preset": true
+        },
+        {
+          "name": "REDIS_HOST",
+          "label": "Redis host",
+          "default": "redis"
+        },
+        {
+          "name": "REDIS_PORT",
+          "label": "Redis port",
+          "default": "6379"
+        },
+        {
+          "name": "REDIS_USERNAME",
+          "label": "Redis username",
+          "default": ""
+        },
+        {
+          "name": "REDIS_PASSWORD",
+          "label": "Redis password",
+          "default": ""
+        },
+        {
+          "name": "REDIS_TTL",
+          "label": "Redis TTL",
+          "default": "3600"
+        },
+        {
+          "name": "REDIS_TTL_FOR_STREAMS",
+          "label": "Redis TTL for streams",
+          "default": "86400"
+        },
+        {
+          "name": "CACHE_PROVIDER",
+          "label": "Cache provider",
+          "default": "redis"
+        },
+        {
+          "name": "CACHE_TTL",
+          "label": "Cache TTL",
+          "default": "3600"
+        },
+        {
+          "name": "SMTP_HOST",
+          "label": "SMTP Host",
+          "default": "smtp.sendgrid.net"
+        },
+        {
+          "name": "SMTP_PORT",
+          "label": "SMTP port",
+          "default": "465"
+        },
+        {
+          "name": "SMTP_SECURE",
+          "label": "SMTP secure",
+          "default": "true"
+        },
+        {
+          "name": "SMTP_USER",
+          "label": "SMTP user",
+          "default": ""
+        },
+        {
+          "name": "SMTP_PASS",
+          "label": "SMTP password",
+          "default": ""
+        },
+        {
+          "name": "SMTP_FROM",
+          "label": "SMTP from",
+          "default": "tds-backend"
+        },
+        {
+          "name": "SMTP_FULL_FROM",
+          "label": "SMTP full from",
+          "default": "No-reply <no-reply@toothpickdentalstaff.com>"
+        },
+        {
+          "name": "SMTP_REPLY_TO",
+          "label": "SMTP reply to",
+          "default": "Toothpick dental staff support <support@toothpickdentalstaff.com>"
+        },
+        {
+          "name": "SMTP_REPLY_TO_BOOKING",
+          "label": "SMTP reply to booking",
+          "default": "Toothpick dental staff booking <booking@toothpickdentalstaff.com>"
+        },
+        {
+          "name": "SMTP_REPLY_TO_ADMIN",
+          "label": "SMTP reply to admin",
+          "default": "Toothpick dental staff admin <admin@toothpickdentalstaff.com>"
+        },
+        {
+          "name": "ADMIN_EMAIL",
+          "label": "Admin email",
+          "default": "admin@toothpickdentalstaff.com"
+        },
+        {
+          "name": "BOOKING_EMAIL",
+          "label": "Booking email",
+          "default": "booking@toothpickdentalstaff.com"
+        },
+        {
+          "name": "SUPPORT_EMAIL",
+          "label": "Support email",
+          "default": "support@toothpickdentalstaff.com"
+        },
+        {
+          "name": "SENDGRID_API_KEY",
+          "label": "Sendgrid API key",
+          "default": ""
+        },
+        {
+          "name": "TZ",
+          "label": "Timezone in format supported by Node.js",
+          "default": "Europe/London"
+        },
+        {
+          "name": "TWILIO_ACCOUNT_SID",
+          "label": "Twilio Account SID",
+          "default": ""
+        },
+        {
+          "name": "TWILIO_AUTH_TOKEN",
+          "label": "Twilio auth token",
+          "default": ""
+        },
+        {
+          "name": "TWILIO_FROM",
+          "label": "Twilio from",
+          "default": ""
+        },
+        {
+          "name": "THROTTLE_TTL",
+          "label": "Throttle TTL",
+          "default": "60"
+        },
+        {
+          "name": "THROTTLE_LIMIT",
+          "label": "Throttle limit",
+          "default": "3"
+        },
+        {
+          "name": "GET_ADDRESS_IO_API_KEY",
+          "label": "Getaddress.io API key",
+          "default": ""
+        },
+        {
+          "name": "EXPO_ACCESS_TOKEN",
+          "label": "Expo access token",
+          "default": ""
+        },
+        {
+          "name": "CORS_ORIGIN",
+          "label": "CORS Allowed Origin",
+          "description": "Comma-seperated values",
+          "default": "http://localhost:4200"
+        },
+        {
+          "name": "CORS_CREDENTIALS",
+          "label": "Allow CORS credentials?",
+          "default": "true"
+        },
+        {
+          "name": "AVAILABLE_MEMORY_IN_MB",
+          "label": "Available memory in mb for health check",
+          "default": "2048"
+        }
+      ]
+    },
+    {
       "type": 1,
       "title": "Registry",
       "description": "Docker image registry",

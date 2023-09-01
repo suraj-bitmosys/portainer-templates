@@ -99,6 +99,12 @@
           "description": "Make sure the domain name's A record is already pointed to this server's ipv4 address for automatic ssl certificates generation with let's encrypt"
         },
         {
+          "name": "PORT",
+          "label": "Port (Required)",
+          "description": "Port on which backend server will be listening on",
+          "default": "3000"
+        },
+        {
           "name": "DATABASE_TYPE",
           "label": "Database type",
           "default": "mongo",

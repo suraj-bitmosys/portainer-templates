@@ -43,6 +43,19 @@
     },
     {
       "type": 3,
+      "title": "MongoDB (with Replicaset)",
+      "description": "MongoDB self-hosting from portainer",
+      "categories": ["database"],
+      "platform": "linux",
+      "logo": "https://portainer-io-assets.sfo2.digitaloceanspaces.com/logos/mongo.png",
+      "name": "mongo-replica-set",
+      "repository": {
+        "url": "https://github.com/suraj-bitmosys/self-hosting",
+        "stackfile": "mongo-replica-set/portainer-app-template/docker-compose.yml"
+      }
+    },
+    {
+      "type": 3,
       "title": "Custom Docker Registry",
       "description": "Docker Registry self-hosting from portainer",
       "categories": ["docker"],

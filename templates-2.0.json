@@ -113,14 +113,18 @@
         {
           "name": "DATABASE_NAME",
           "label": "Database name",
-          "default": "tds-db",
-          "preset": true
+          "description": "Make sure this database name value match with the one connected with the below Mongodb client URL",
+          "default": "tds-db"
+        },
+        {
+          "name": "DATABASE_SEED",
+          "label": "Should seed the initial data?",
+          "default": "true"
         },
         {
           "name": "MONGODB_CLIENT_URL",
           "label": "Mongodb client URL",
-          "default": "mongodb://mongo-one-db:27017/tds-db?replicaSet=dbrs&directConnection=true",
-          "preset": true
+          "default": "mongodb://mongo-one-db:27017/${DATABASE_NAME}?replicaSet=dbrs&directConnection=true"
         },
         {
           "name": "SALT_ROUNDS",

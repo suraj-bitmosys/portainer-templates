@@ -94,9 +94,27 @@
       },
       "env": [
         {
-          "name": "DOMAIN",
-          "label": "Domain Name (Required)",
-          "description": "Make sure the domain name's A record is already pointed to this server's ipv4 address for automatic ssl certificates generation with let's encrypt"
+          "name": "ROOT_DOMAIN",
+          "label": "Root Domain Name (Required)",
+          "description": "Example: toothpickdentalstaff.com for hosting backend server at api.toothpickdentalstaff.com, admin portal at admin.toothpickdentalstaff.com and practice portal at practice.toothpickdentalstaff.com. Make sure all three sub-domain name's A record is already pointed to this server's ipv4 address for automatic ssl certificates generation with let's encrypt"
+        },
+        {
+          "name": "API_SUB_DOMAIN",
+          "label": "API Subdomain",
+          "default": "api",
+          "preset": true
+        },
+        {
+          "name": "ADMIN_SUB_DOMAIN",
+          "label": "Admin Subdomain",
+          "description": "Example: admin for hosting admin portal at admin.toothpickdentalstaff.com where root domain is toothpickdentalstaff.com",
+          "default": "admin"
+        },
+        {
+          "name": "PRACTICE_SUB_DOMAIN",
+          "label": "Practice Subdomain",
+          "description": "Example: practice for hosting admin portal at practice.toothpickdentalstaff.com where root domain is toothpickdentalstaff.com",
+          "default": "practice"
         },
         {
           "name": "PORT",

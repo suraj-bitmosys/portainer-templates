@@ -100,19 +100,19 @@
         },
         {
           "name": "API_SUB_DOMAIN",
-          "label": "API Subdomain",
+          "label": "API Subdomain (Required)",
           "default": "api",
           "preset": true
         },
         {
           "name": "ADMIN_SUB_DOMAIN",
-          "label": "Admin Subdomain",
+          "label": "Admin Subdomain (Required)",
           "description": "Example: admin for hosting admin portal at admin.toothpickdentalstaff.com where root domain is toothpickdentalstaff.com",
           "default": "admin"
         },
         {
           "name": "PRACTICE_SUB_DOMAIN",
-          "label": "Practice Subdomain",
+          "label": "Practice Subdomain (Required)",
           "description": "Example: practice for hosting admin portal at practice.toothpickdentalstaff.com where root domain is toothpickdentalstaff.com",
           "default": "practice"
         },
@@ -124,13 +124,13 @@
         },
         {
           "name": "DATABASE_TYPE",
-          "label": "Database type",
+          "label": "Database type (Required)",
           "default": "mongo",
           "preset": true
         },
         {
           "name": "DATABASE_NAME",
-          "label": "Database name",
+          "label": "Database name (Required)",
           "description": "Make sure this database name value match with the one connected with the below Mongodb client URL",
           "default": "tds-db"
         },
@@ -141,8 +141,8 @@
         },
         {
           "name": "MONGODB_CLIENT_URL",
-          "label": "Mongodb client URL",
-          "default": "mongodb://mongo-one-db:27017/${DATABASE_NAME}?replicaSet=dbrs&directConnection=true"
+          "label": "Mongodb client URL (Required)",
+          "default": "mongodb://mongo-one-db:27017,mongo-two-db:27017,mongo-three-db:27017/${DATABASE_NAME}?replicaSet=dbrs"
         },
         {
           "name": "SALT_ROUNDS",

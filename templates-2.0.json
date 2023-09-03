@@ -105,16 +105,34 @@
           "preset": true
         },
         {
+          "name": "API_DOMAIN",
+          "label": "API Domain (Required)",
+          "default": "${API_SUB_DOMAIN}.${ROOT_DOMAIN}",
+          "preset": true
+        },
+        {
           "name": "ADMIN_SUB_DOMAIN",
           "label": "Admin Subdomain (Required)",
           "description": "Example: admin for hosting admin portal at admin.toothpickdentalstaff.com where root domain is toothpickdentalstaff.com",
           "default": "admin"
         },
         {
+          "name": "ADMIN_DOMAIN",
+          "label": "Admin Domain (Required)",
+          "default": "${ADMIN_SUB_DOMAIN}.${ROOT_DOMAIN}",
+          "preset": true
+        },
+        {
           "name": "PRACTICE_SUB_DOMAIN",
           "label": "Practice Subdomain (Required)",
           "description": "Example: practice for hosting admin portal at practice.toothpickdentalstaff.com where root domain is toothpickdentalstaff.com",
           "default": "practice"
+        },
+        {
+          "name": "PRACTICE_DOMAIN",
+          "label": "Practice Domain (Required)",
+          "default": "${PRACTICE_SUB_DOMAIN}.${ROOT_DOMAIN}",
+          "preset": true
         },
         {
           "name": "PORT",

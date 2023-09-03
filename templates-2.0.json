@@ -233,7 +233,7 @@
         {
           "name": "FILE_SYSTEM_ROOT",
           "label": "File system root",
-          "default": "uploads",
+          "default": ".",
           "preset": true
         },
         {
